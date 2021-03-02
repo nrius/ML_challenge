@@ -10,4 +10,5 @@ def mixin_fixer(df):
     
     for x in ingredients:
         df[x]=df["mixins"].str.contains(x).astype(float)
+    df.drop(["mixins"], axis=1, inplace=True)
     return df
