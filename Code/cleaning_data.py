@@ -25,13 +25,12 @@ def dropping_rows_and_columns(df):
     
     # converting sugar index to numpy
     sugar_index = np.array(df["sugar index"])
+    #log transform sugar index
     df["sugar index"] = np.log(sugar_index)
     
-    
-    # converting bake temp ratio to numpy
-    #prepare columns to apply log
-    
-    #bake_temp = np.array(df["bake temp"])
-    #df["bake temp"] = np.log(bake_temp)
+   
+    #the same for bake temp
+    bake_temp = np.array(df["bake temp"])
+    df["bake temp"] = np.log(bake_temp)
     
     return df
